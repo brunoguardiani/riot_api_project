@@ -9,7 +9,7 @@ from corsheaders.decorators import cors_exempt
 @cors_exempt
 class RiotPlayer(APIView):
     def get_champion_info(self, champion_id):
-        champions_ids = requests.get('http://ddragon.leagueoflegends.com/cdn/6.24.1/data/en_US/champion.json')
+        champions_ids = requests.get('http://ddragon.leagueoflegends.com/cdn/13.1.1/data/en_US/champion.json')
         champ_list = champions_ids.json().get('data')
         for i,j in champ_list.items():
             if j['key'] == champion_id:
@@ -30,11 +30,11 @@ class RiotPlayer(APIView):
                 'champion_name' : champion_name,
                 'champion_level_mastery' : champ.get('championLevel'),
                 'champion_mastery_points' : champ.get('championPoints'),
-                'champion_icon': f'http://ddragon.leagueoflegends.com/cdn/6.24.1/img/champion/{champion_name}.png'
+                'champion_icon': f'http://ddragon.leagueoflegends.com/cdn/13.1.1/img/champion/{champion_name}.png'
             })
         acnt_response = acnt_response.json()
         prf_id = acnt_response.get('profileIconId')
-        acnt_response['profile_image'] = f'http://ddragon.leagueoflegends.com/cdn/10.15.1/img/profileicon/{prf_id}.png'
+        acnt_response['profile_image'] = f'http://ddragon.leagueoflegends.com/cdn/13.1.1/img/profileicon/{prf_id}.png'
         acnt_response['champion_masteries'] = champ_result_list
         return JsonResponse(acnt_response, status=mst_response.status_code)
 
