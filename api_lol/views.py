@@ -1,7 +1,7 @@
 from rest_framework.views import APIView
 from django.http import JsonResponse
 import requests
-from rest_framework import status
+# from rest_framework import status
 
 
 class RiotPlayer(APIView):
@@ -16,6 +16,7 @@ class RiotPlayer(APIView):
         summoner_name = kwargs['username']
         acnt_response = requests.get(f'https://br1.api.riotgames.com/lol/summoner/v4/summoners/by-name/{summoner_name}?api_key=RGAPI-3540c9b8-3471-4e1f-8a3c-f2c94797480d')
         if acnt_response.status_code != 200:
+            print(acnt_response.content)
             return JsonResponse({f'error':{acnt_response.json()}}, status=acnt_response.status_code)
         encrypted_summoner_id = acnt_response.json().get('id')
         mst_response = requests.get(f'https://br1.api.riotgames.com/lol/champion-mastery/v4/champion-masteries/by-summoner/{encrypted_summoner_id}/top?count=3&api_key=RGAPI-3540c9b8-3471-4e1f-8a3c-f2c94797480d')
