@@ -2,9 +2,11 @@ from rest_framework.views import APIView
 from django.http import JsonResponse
 import requests
 import api_lol.settings as sett
+from corsheaders.decorators import cors_exempt
+
 # from rest_framework import status
 
-
+@cors_exempt
 class RiotPlayer(APIView):
     def get_champion_info(self, champion_id):
         champions_ids = requests.get('http://ddragon.leagueoflegends.com/cdn/6.24.1/data/en_US/champion.json')
