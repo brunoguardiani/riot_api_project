@@ -16,6 +16,7 @@ from pathlib import Path
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 from .cors_config import *
+
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
@@ -26,72 +27,59 @@ SECRET_KEY = 'django-insecure-iwgc32gh0$_fdqe&6cu3ojlcd+co=+*7a^h3mk=m9vn0o!0zlb
 DEBUG = True
 
 ALLOWED_HOSTS = [
-  '88cdfe3a-3614-4a16-933a-fa73bfcc9cc8.id.repl.co',
-  '10.30.0.95',
-  'riotapiproject.brunodi.repl.co'
+  '88cdfe3a-3614-4a16-933a-fa73bfcc9cc8.id.repl.co', '10.30.0.95',
+  'riotapiproject.brunodi.repl.co', '10.20.3.231:16419'
 ]
-
 
 # Application definition
 
 INSTALLED_APPS = [
-    'django.contrib.admin',
-    'django.contrib.auth',
-    'django.contrib.contenttypes',
-    'django.contrib.sessions',
-    'django.contrib.messages',
-    'django.contrib.staticfiles',
-    'rest_framework',
-    'corsheaders'
+  'django.contrib.admin', 'django.contrib.auth', 'django.contrib.contenttypes',
+  'django.contrib.sessions', 'django.contrib.messages',
+  'django.contrib.staticfiles', 'rest_framework', 'corsheaders'
 ]
 
 MIDDLEWARE = [
-    'corsheaders.middleware.CorsMiddleware',
-    'django.middleware.security.SecurityMiddleware',
-    'django.contrib.sessions.middleware.SessionMiddleware',
-    'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
-    'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'django.contrib.messages.middleware.MessageMiddleware',
-    'django.middleware.clickjacking.XFrameOptionsMiddleware',
+  'corsheaders.middleware.CorsMiddleware',
+  'django.middleware.security.SecurityMiddleware',
+  'django.contrib.sessions.middleware.SessionMiddleware',
+  'django.middleware.common.CommonMiddleware',
+  'django.middleware.csrf.CsrfViewMiddleware',
+  'django.contrib.auth.middleware.AuthenticationMiddleware',
+  'django.contrib.messages.middleware.MessageMiddleware',
+  'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
 ROOT_URLCONF = 'api_lol.urls'
 
 TEMPLATES = [
-    {
-        'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
-        'APP_DIRS': True,
-        'OPTIONS': {
-            'context_processors': [
-                'django.template.context_processors.debug',
-                'django.template.context_processors.request',
-                'django.contrib.auth.context_processors.auth',
-                'django.contrib.messages.context_processors.messages',
-            ],
-        },
+  {
+    'BACKEND': 'django.template.backends.django.DjangoTemplates',
+    'DIRS': [],
+    'APP_DIRS': True,
+    'OPTIONS': {
+      'context_processors': [
+        'django.template.context_processors.debug',
+        'django.template.context_processors.request',
+        'django.contrib.auth.context_processors.auth',
+        'django.contrib.messages.context_processors.messages',
+      ],
     },
+  },
 ]
 
 WSGI_APPLICATION = 'api_lol.wsgi.application'
 
-# CORS_ORIGIN_WHITELIST = [
-#     'https://riotapiproject.brunodi.repl.co',
-# ]
-
 CORS_ORIGIN_ALLOW_ALL = True
 
-CORS_ALLOW_HEADERS = [   
-    'Content-Type'
-]
+CORS_ALLOW_HEADERS = ['Content-Type']
 CORS_ALLOW_METHODS = [
-    'DELETE',
-    'GET',
-    'OPTIONS',
-    'PATCH',
-    'POST',
-    'PUT',
+  'DELETE',
+  'GET',
+  'OPTIONS',
+  'PATCH',
+  'POST',
+  'PUT',
 ]
 
 CORS_ALLOW_CREDENTIALS = True
@@ -100,31 +88,30 @@ CORS_ALLOW_CREDENTIALS = True
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+  'default': {
+    'ENGINE': 'django.db.backends.sqlite3',
+    'NAME': BASE_DIR / 'db.sqlite3',
+  }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
 
 AUTH_PASSWORD_VALIDATORS = [
-    {
-        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
-    },
+  {
+    'NAME':
+    'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
+  },
+  {
+    'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
+  },
+  {
+    'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
+  },
+  {
+    'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
+  },
 ]
-
 
 # Internationalization
 # https://docs.djangoproject.com/en/4.1/topics/i18n/
@@ -136,7 +123,6 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 
 USE_TZ = True
-
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
