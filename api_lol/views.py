@@ -28,7 +28,7 @@ class RiotPlayer(APIView):
                 'champion_name' : champion_name,
                 'champion_level_mastery' : champ.get('championLevel'),
                 'champion_mastery_points' : champ.get('championPoints'),
-                'champion_icon': f'http://ddragon.leagueoflegends.com/cdn/6.24.1/img/champion/{Aatrox}.png'
+                'champion_icon': f'http://ddragon.leagueoflegends.com/cdn/6.24.1/img/champion/{champion_name}.png'
             })
         acnt_response = acnt_response.json()
         prf_id = acnt_response.get('profileIconId')
