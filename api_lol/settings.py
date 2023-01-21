@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/4.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.1/ref/settings/
 """
-
+from enum import Enum
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -27,8 +27,7 @@ SECRET_KEY = 'django-insecure-iwgc32gh0$_fdqe&6cu3ojlcd+co=+*7a^h3mk=m9vn0o!0zlb
 DEBUG = True
 
 ALLOWED_HOSTS = [
-  '88cdfe3a-3614-4a16-933a-fa73bfcc9cc8.id.repl.co', '10.30.0.95',
-  'riotapiproject.brunodi.repl.co', '10.20.3.231:16419'
+  '*'
 ]
 
 # Application definition
@@ -134,4 +133,15 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-API_KEY = 'RGAPI-da4eca9f-72b9-4fe1-9a4e-2ca0b9b024fe'
+API_KEY = 'RGAPI-64825886-4790-48d4-9288-0ff7a3fe38b1'
+
+API_URL = 'https://br1.api.riotgames.com/lol'
+
+DDRAGON_VERSION = '13.1.1'
+
+class RIOT_API_URLS(Enum):
+  TIER_IMAGES_URL = 'https://github.com/InFinity54/LoL_DDragon/tree/master/extras/tier'
+  SUMMONER_V4_URL = f'{API_URL}/summoner/v4/summoners'
+  CHAMPIONS_MASTERIES = f'{API_URL}/champion-mastery/v4/champion-masteries/by-summoner'
+  DDRAGON_DATASET = f'http://ddragon.leagueoflegends.com/cdn/{DDRAGON_VERSION}'
+  LEAGUE_V4_URL = f'{API_URL}/league/v4'
