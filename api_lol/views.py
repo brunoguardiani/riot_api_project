@@ -1,3 +1,4 @@
+import re
 import requests
 from django.http import JsonResponse
 from rest_framework.views import APIView, status
@@ -20,12 +21,13 @@ class RiotPlayer(APIView):
     def _get_champions_masteries_list(self, champions_masteries):
         champions_ids = [str(cm.get('championId')) for cm in champions_masteries]
         cm_dict = self._get_champions_info(champions_ids)
+        pattern = re.compile(r'\s')
         cm_result = [\
                     {
                         'champion_name':cm_dict.get(str(champ.get('championId'))),
                         'champion_level_mastery': champ.get('championLevel'),
                         'champion_mastery_points' : champ.get('championPoints'),
-                        'champion_icon': f'{settings.RIOT_API_URLS.DDRAGON_DATASET.value}/img/champion/{cm_dict.get(str(champ.get("championId")))}.png'
+                        'champion_icon': f"{settings.RIOT_API_URLS.DDRAGON_DATASET.value}/img/champion/{pattern.sub('', cm_dict.get(str(champ.get('championId'))))}.png"
                     } for champ in champions_masteries]
         return cm_result
 
