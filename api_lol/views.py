@@ -33,7 +33,7 @@ class RiotPlayer(APIView):
 
     def _get_tier_image(self, summoner_tier_list):
         for i in summoner_tier_list:
-            i['tier_image'] = f'{settings.RIOT_API_URLS.TIER_IMAGES_URL}/{i.get("tier").lower()}.png'
+            i['tier_image'] = f'{settings.RIOT_API_URLS.TIER_IMAGES_URL.value}/{i.get("tier").lower()}.png'
         
         return summoner_tier_list
 
