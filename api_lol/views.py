@@ -67,3 +67,6 @@ class RiotPlayer(APIView):
         dict_result['profile_image'] = f'{settings.RIOT_API_URLS.DDRAGON_DATASET.value}/img/profileicon/{prf_id}.png'
         return JsonResponse(dict_result, status=status.HTTP_200_OK)
 
+class RiotTopChallengers(APIView):
+    def get(self, request, *args, **kwargs):
+        pass

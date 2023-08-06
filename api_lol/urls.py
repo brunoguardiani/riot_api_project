@@ -15,9 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from api_lol.views import RiotPlayer
+from api_lol.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('riot/<str:username>', RiotPlayer.as_view()),
+    path('riot/top_challengers', RiotTopChallengers.as_view()),
 ]

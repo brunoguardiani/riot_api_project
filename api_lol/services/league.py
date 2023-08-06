@@ -9,8 +9,8 @@ class LeagueRankRiotApiServices():
         self.api_key = settings.API_KEY
 
     def get_rank_info_by_id(self, encrypted_summoner_id):
-        print(f'{self.url}/entries/by-summoner/{encrypted_summoner_id}&api_key={self.api_key}')
         response = requests.get(f'{self.url}/entries/by-summoner/{encrypted_summoner_id}?api_key={self.api_key}')
         return response.json(), response.status_code
     
-    
+    def get_top_challengers(self, queue):
+        response = requests.get(f'{self.url}/entries/by-summoner/{encrypted_summoner_id}?api_key={self.api_key}')
