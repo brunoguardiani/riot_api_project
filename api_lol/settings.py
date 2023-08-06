@@ -133,7 +133,7 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-API_KEY = 'RGAPI-e5142438-2075-496b-bc67-854070a2b0dd'
+API_KEY = 'RGAPI-9f8f2740-c36c-4ec4-91e2-f55ad7f9dda6'
 
 API_URL = 'https://br1.api.riotgames.com/lol'
 
