@@ -1,14 +1,14 @@
 {
     "builds": [
       {
-        "src": "riot_api_project/wsgi.py",
+        "src": "/api_lol/wsgi.py",
         "use": "@vercel/python"
       }
     ],
     "routes": [
       {
         "src": "/(.*)",
-        "dest": "riot_api_project/wsgi.py"
+        "dest": "/api_lol/wsgi.py"
       }
     ]
 }
