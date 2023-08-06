@@ -1,14 +1,14 @@
 {
     "builds": [
       {
-        "src": "django_app_name/wsgi.py",
+        "src": "riot_api_project/wsgi.py",
         "use": "@vercel/python"
       }
     ],
     "routes": [
       {
         "src": "/(.*)",
-        "dest": "django_app_name/wsgi.py"
+        "dest": "riot_api_project/wsgi.py"
       }
     ]
 }
