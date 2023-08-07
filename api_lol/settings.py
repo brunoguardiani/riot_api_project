@@ -137,11 +137,9 @@ API_KEY = 'RGAPI-9f8f2740-c36c-4ec4-91e2-f55ad7f9dda6'
 
 API_URL = 'https://br1.api.riotgames.com/lol'
 
-DDRAGON_VERSION = '13.1.1'
-
 class RIOT_API_URLS(Enum):
-  TIER_IMAGES_URL = 'https://github.com/InFinity54/LoL_DDragon/tree/master/extras/tier'
+  TIER_IMAGES_URL = 'https://raw.githubusercontent.com/InFinity54/LoL_DDragon/master/extras/tier'
   SUMMONER_V4_URL = f'{API_URL}/summoner/v4/summoners'
   CHAMPIONS_MASTERIES = f'{API_URL}/champion-mastery/v4/champion-masteries/by-summoner'
-  DDRAGON_DATASET = f'http://ddragon.leagueoflegends.com/cdn/{DDRAGON_VERSION}'
+  DDRAGON_DATASET = f'http://ddragon.leagueoflegends.com/cdn'
   LEAGUE_V4_URL = f'{API_URL}/league/v4'
